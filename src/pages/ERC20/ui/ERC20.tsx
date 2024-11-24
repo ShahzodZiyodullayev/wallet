@@ -66,6 +66,9 @@ function TokenBalance() {
     <Box>
       {isConnected ? (
         <Stack className={classes.WAccountBalanceContainer}>
+          <Title className={classes.WConnectWagmiTitle} mb={20}>
+            Check ERC20 Token Balance
+          </Title>
           <TextInput mb={15} placeholder="Enter ERC20 Token Address" value={tokenAddress} onChange={e => setTokenAddress(e.target.value)} />
           <WCopyButton value={ERC20_ADDRESS} shortValue={formattedAddress} />
           <Title className={classes.WAccountBalanceTitle}>Balance</Title>

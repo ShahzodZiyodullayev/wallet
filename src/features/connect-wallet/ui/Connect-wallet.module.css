@@ -1,26 +1,50 @@
 .WConnectWallet {
-  height: 100vh;
+    height: 100vh;
+    overflow: auto;
+
+    @media (max-width: 768px) {
+        padding-inline: 0 !important;
+    }
 }
 
 .WCenterComponent {
-  height: inherit;
-  flex-direction: column;
-  padding: 30px;
-  gap: 10px;
+    height: inherit;
+    flex-direction: column;
+    padding: 30px;
+    gap: 10px;
+
+    @media (max-width: 400px) {
+        padding: 0;
+    }
+
+    @media (max-height: 655px) {
+        height: auto;
+    }
 }
 
 .WTitle {
-  font-size: 40px !important;
-  color: light-dark(var(--mantine-color-white), var(--mantine-color-dark-7));
-  font-weight: 100 !important;
+    font-size: 40px !important;
+    color: light-dark(var(--mantine-color-white), var(--mantine-color-dark-7));
+    font-weight: 100 !important;
 }
 
 .WCenterCard {
-  width: calc(100% - 40px);
-  max-width: 800px;
-  flex: auto;
+    width: calc(100% - 40px);
+    max-width: 800px;
+    flex: auto;
 
-  [data-mantine-color-scheme="light"] & {
-    background-color: #24272a;
-  }
+    [data-mantine-color-scheme="light"] & {
+        background-color: #24272a;
+    }
+
+    @media (max-width: 768px) {
+        width: 100%;
+    }
+
+    @media (max-width: 400px) {
+        border-top-left-radius: 10px !important;
+        border-top-right-radius: 10px !important;
+        border-bottom-left-radius: 0px !important;
+        border-bottom-right-radius: 0px !important;
+    }
 }
