@@ -1,17 +1,20 @@
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { WagmiProvider } from "wagmi";
 
 import { config } from "@/shared/config";
 import { ConnectWallet } from "@/features/connect-wallet";
 
-const queryClient = new QueryClient();
-
+/**
+ * Renders the App component.
+ *
+ * This function returns a React component that wraps the `ConnectWallet` component with
+ * the `WagmiProvider` configured with the provided `config`.
+ *
+ * @return {JSX.Element} The rendered App component.
+ */
 export default function App() {
   return (
     <WagmiProvider config={config}>
-      <QueryClientProvider client={queryClient}>
-        <ConnectWallet />
-      </QueryClientProvider>
+      <ConnectWallet />
     </WagmiProvider>
   );
 }

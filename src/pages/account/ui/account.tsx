@@ -1,11 +1,19 @@
 import { useAccount, useDisconnect, useWalletClient } from "wagmi";
-import { Badge, Box, Flex, Stack, Title, CopyButton, Button } from "@mantine/core";
-import { IconCopyPlusFilled, IconPlug } from "@tabler/icons-react";
+import { Badge, Box, Flex, Stack, Title, Button } from "@mantine/core";
+import { IconPlug } from "@tabler/icons-react";
 import { formatAddress, formatBalance, notifyError } from "@/shared/lib/helpers";
 import { useState } from "react";
 import { ethers } from "ethers";
+import { WCopyButton } from "@/shared/ui/copy-button";
 import classes from "./Account.module.css";
 
+/**
+ * This component handles the display and interaction of a user's cryptocurrency account.
+ *
+ * @return {JSX.Element} Returns a JSX element representing the account component. It includes
+ *                       display of wallet address, connection status, and balance. It also
+ *                       provides buttons to check the balance and disconnect the wallet.
+ */
 export default function Account() {
   const [balance, setBalance] = useState<string | null>(null);
   const [isLoadingBalance, setIsLoadingBalance] = useState(false);
@@ -42,22 +50,7 @@ export default function Account() {
         <Badge>{walletClient?.chain?.name}</Badge>
         <Stack className={classes.WAccountDetail}>
           <Title className={classes.WAccountEnsName}>{connector?.name}</Title>
-          {address ? (
-            <CopyButton value={address}>
-              {({ copied, copy }) => (
-                <Button
-                  className={classes.WAccountAddressButton}
-                  variant="transparent"
-                  color={copied ? "teal" : "blue"}
-                  onClick={copy}
-                  rightSection={<IconCopyPlusFilled size={16} />}>
-                  {copied ? "Copied address" : formattedAddress}
-                </Button>
-              )}
-            </CopyButton>
-          ) : (
-            "Not Connected"
-          )}
+          {address ? <WCopyButton value={address} shortValue={formattedAddress} /> : "Not Connected"}
         </Stack>
       </Flex>
       <Stack className={classes.WAccountBalanceContainer}>

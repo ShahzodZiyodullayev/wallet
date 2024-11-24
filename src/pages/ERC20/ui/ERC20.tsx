@@ -1,18 +1,26 @@
 import { useState, useEffect } from "react";
-import { ethers } from "ethers";
-import { useAccount } from "wagmi";
+import { WCopyButton } from "@/shared/ui/copy-button";
 import { Box, Button, Stack, TextInput, Title } from "@mantine/core";
-import { formatBalance, notifyError } from "@/shared/lib/helpers";
+import { ethers } from "ethers";
 import classes from "./ERC20.module.css";
+import { useAccount } from "wagmi";
+import { formatAddress, formatBalance, notifyError } from "@/shared/lib/helpers";
+import { ERC20_ABI, ERC20_ADDRESS } from "@/shared/lib/constants";
 
-const ERC20_ABI = ["function balanceOf(address owner) view returns (uint256)", "function decimals() view returns (uint8)"];
-
+/**
+ * TokenBalance component fetches and displays the ERC20 token balance of a connected wallet address.
+ *
+ * @return {JSX.Element} The rendered component which includes an input field for ERC20 token address,
+ * a button to fetch the token balance, and displays the resulting balance.
+ */
 function TokenBalance() {
   const { address, isConnected } = useAccount();
   const [provider, setProvider] = useState<any>(null);
   const [tokenAddress, setTokenAddress] = useState("");
   const [tokenBalance, setTokenBalance] = useState("0.0000");
   const [isLoadingBalance, setIsLoadingBalance] = useState(false);
+
+  const formattedAddress = formatAddress(ERC20_ADDRESS);
 
   useEffect(() => {
     if (window.ethereum && isConnected) {
@@ -58,13 +66,8 @@ function TokenBalance() {
     <Box>
       {isConnected ? (
         <Stack className={classes.WAccountBalanceContainer}>
-          <TextInput
-            mb={15}
-            placeholder="Enter ERC20 Token Address"
-            defaultValue="0x6B175474E89094C44Da98b954EedeAC495271d0F"
-            value={tokenAddress}
-            onChange={e => setTokenAddress(e.target.value)}
-          />
+          <TextInput mb={15} placeholder="Enter ERC20 Token Address" value={tokenAddress} onChange={e => setTokenAddress(e.target.value)} />
+          <WCopyButton value={ERC20_ADDRESS} shortValue={formattedAddress} />
           <Title className={classes.WAccountBalanceTitle}>Balance</Title>
           <Title className={classes.WAccountBalance}>{tokenBalance} </Title>
           <Button variant="light" color="teal" onClick={fetchTokenBalance} className={classes.WCheckBalance} loading={isLoadingBalance}>

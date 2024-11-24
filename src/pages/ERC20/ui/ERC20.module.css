@@ -1,28 +1,28 @@
 .WAccountBalanceContainer {
-    gap: 0 !important;
-    justify-content: center !important;
-    align-items: center !important;
+  gap: 0 !important;
+  justify-content: center !important;
+  align-items: center !important;
 }
 
 .WAccountBalanceTitle {
-    font-size: 20px !important;
-    font-weight: 4 = 700 !important;
-    color: light-dark(var(--mantine-color-white), var(--mantine-color-dark-7));
+  font-size: 20px !important;
+  font-weight: 4 = 700 !important;
+  color: light-dark(var(--mantine-color-white), var(--mantine-color-dark-7));
 }
 
 .WAccountBalance {
-    font-size: 20px !important;
-    font-weight: 400 !important;
-    color: light-dark(var(--mantine-color-white), var(--mantine-color-dark-7));
+  font-size: 20px !important;
+  font-weight: 400 !important;
+  color: light-dark(var(--mantine-color-white), var(--mantine-color-dark-7));
 }
 
-.WCheckBalance{
-    margin-top: 20px;
+.WCheckBalance {
+  margin-top: 20px;
 }
 
-.WConnectWagmiTitle{
-    text-align: center;
-    font-weight: 300 !important;
-    font-size: 20px !important;
-    color: light-dark(var(--mantine-color-white), var(--mantine-color-dark-7));;
+.WConnectWagmiTitle {
+  text-align: center;
+  font-weight: 300 !important;
+  font-size: 20px !important;
+  color: light-dark(var(--mantine-color-white), var(--mantine-color-dark-7));
 }

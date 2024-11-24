@@ -5,6 +5,12 @@ import { Connect } from "@/pages/connect";
 import { TestWallet } from "@/pages/ERC20";
 import classes from "./Connect-wallet.module.css";
 
+/**
+ * ConnectWallet component renders the interface for connecting a user's wallet.
+ * It displays the wallet connection status and provides access to the wallet account or a connect option.
+ *
+ * @return {JSX.Element} The rendered component, showing the wallet connection UI.
+ */
 export default function ConnectWallet() {
   const { isConnected } = useAccount();
 

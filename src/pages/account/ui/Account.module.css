@@ -1,42 +1,42 @@
 .WAccountHeader {
-    padding: 15px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 7px;
-    justify-content: space-between;
-    align-items: flex-start;
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 7px;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
 .WAccountDetail {
-    text-align: right;
+  text-align: right;
 }
 
 .WAccountEnsName {
-    font-size: 20px !important;
-    font-weight: 400 !important;
-    line-height: 0.5 !important;
-    color: light-dark(var(--mantine-color-white), var(--mantine-color-dark-7));
+  font-size: 20px !important;
+  font-weight: 400 !important;
+  line-height: 0.5 !important;
+  color: light-dark(var(--mantine-color-white), var(--mantine-color-dark-7));
 }
 
 .WAccountAddressButton {
-    height: auto !important;
-    padding-right: 0 !important;
+  height: auto !important;
+  padding-right: 0 !important;
 }
 
 .WAccountBalanceContainer {
-    gap: 0 !important;
-    justify-content: center !important;
-    margin-top: 20px;
-    align-items: center !important;
+  gap: 0 !important;
+  justify-content: center !important;
+  margin-top: 20px;
+  align-items: center !important;
 }
 
 .WAccountBalanceTitle {
-    font-size: 20px !important;
-    font-weight: 700 !important;
-    color: light-dark(var(--mantine-color-white), var(--mantine-color-dark-7));
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  color: light-dark(var(--mantine-color-white), var(--mantine-color-dark-7));
 }
 
 .WAccountBalance {
-    font-size: 20px !important;
-    font-weight: 400 !important;
-    color: light-dark(var(--mantine-color-white), var(--mantine-color-dark-7));
+  font-size: 20px !important;
+  font-weight: 400 !important;
+  color: light-dark(var(--mantine-color-white), var(--mantine-color-dark-7));
 }

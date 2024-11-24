@@ -53,6 +53,25 @@ yarn lint
 npm run lint
 ```
 
+
+### Lint Fix
+
+To run ESLint and fix issues:
+```sh
+yarn lint:fix
+# or
+npm run lint:fix
+```
+
+
+### Formatting
+To run prettier:
+```sh
+yarn format
+# or
+npm run format
+```
+
 ## ESLint Configuration
 
 For production applications, it is recommended to enable type-aware lint rules:

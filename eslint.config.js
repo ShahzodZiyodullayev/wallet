@@ -6,7 +6,6 @@ import tsParser from "@typescript-eslint/parser";
 import react from "eslint-plugin-react";
 import prettier from "eslint-plugin-prettier";
 import unusedImports from "eslint-plugin-unused-imports";
-import reactQuery from "@tanstack/eslint-plugin-query";
 
 export default [
   {
@@ -23,7 +22,6 @@ export default [
       "@typescript-eslint": ts,
       prettier,
       "unused-imports": unusedImports,
-      "@tanstack/query": reactQuery,
       "react-refresh": reactRefresh,
     },
     rules: {
@@ -35,6 +33,17 @@ export default [
       ],
       "prettier/prettier": "warn",
       "unused-imports/no-unused-imports": "warn",
+      "no-duplicate-imports": "warn",
+    },
+    settings: {
+      react: {
+        version: "detect",
+      },
+      "import/resolver": {
+        typescript: {
+          alwaysTryTypes: true,
+        },
+      },
     },
   },
 ];
