@@ -1,8 +1,9 @@
-import { useAccount } from "wagmi";
-import { Card, Center, Container, Title, Divider } from "@mantine/core";
+import { useAccount, useDisconnect } from "wagmi";
+import { Card, Center, Container, Title, Divider, ActionIcon, Flex } from "@mantine/core";
 import { Account } from "@/pages/account";
 import { Connect } from "@/pages/connect";
 import { TestWallet } from "@/pages/ERC20";
+import { IconHome } from "@tabler/icons-react";
 import classes from "./Connect-wallet.module.css";
 
 /**
@@ -13,11 +14,19 @@ import classes from "./Connect-wallet.module.css";
  */
 export default function ConnectWallet() {
   const { isConnected } = useAccount();
+  const { disconnect } = useDisconnect();
 
   return (
     <Container fluid className={classes.WConnectWallet}>
       <Center className={classes.WCenterComponent}>
-        <Title className={classes.WTitle}>Wallet</Title>
+        <Flex justify={isConnected ? "space-between" : "center"} className={classes.WTitleSection}>
+          {isConnected && (
+            <ActionIcon variant="light" size="xl" onClick={() => disconnect()}>
+              <IconHome size={30} />
+            </ActionIcon>
+          )}
+          <Title className={classes.WTitle}>Wallet</Title>
+        </Flex>
         <Card className={classes.WCenterCard}>
           {isConnected ? <Account /> : <Connect />}
           <Divider my="lg" />

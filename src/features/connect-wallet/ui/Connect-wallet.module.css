@@ -7,6 +7,12 @@
     }
 }
 
+.WTitleSection {
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+}
+
 .WCenterComponent {
     height: inherit;
     flex-direction: column;
