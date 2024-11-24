@@ -1,4 +1,4 @@
-import { Button, createTheme, MantineProvider, Textarea, TextInput, Title } from "@mantine/core";
+import { Button, Card, createTheme, MantineProvider, TextInput } from "@mantine/core";
 import { emotionTransform, MantineEmotionProvider } from "@mantine/emotion";
 import "@mantine/core/styles.css";
 import "@mantine/notifications/styles.css";
@@ -11,21 +11,15 @@ export const withMantine = (component: ComponentType) => () => {
       "light-dark": ["#7AD1DD", "#5FCCDB", "#44CADC", "#2AC9DE", "#1AC2D9", "#11B7CD", "#09ADC3", "#0E99AC", "#128797", "#147885"],
     },
     components: {
+      Card: Card.extend({
+        defaultProps: {
+          radius: 7,
+        },
+      }),
+
       TextInput: TextInput.extend({
         defaultProps: {
           radius: 7,
-        },
-      }),
-
-      Textarea: Textarea.extend({
-        defaultProps: {
-          radius: 7,
-        },
-      }),
-
-      Title: Title.extend({
-        defaultProps: {
-          ff: "Montserrat, sans-serif",
         },
       }),
 
@@ -42,7 +36,7 @@ export const withMantine = (component: ComponentType) => () => {
   });
 
   return (
-    <MantineProvider stylesTransform={emotionTransform} withCssVariables theme={theme} defaultColorScheme="light">
+    <MantineProvider stylesTransform={emotionTransform} withCssVariables theme={theme} defaultColorScheme="dark">
       <MantineEmotionProvider>
         <Notifications limit={3} position="bottom-center" zIndex={100000} />
         {createElement(component)}

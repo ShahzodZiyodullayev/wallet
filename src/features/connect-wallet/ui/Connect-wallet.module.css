@@ -1,0 +1,26 @@
+.WConnectWallet {
+  height: 100vh;
+}
+
+.WCenterComponent {
+  height: inherit;
+  flex-direction: column;
+  padding: 30px;
+  gap: 10px;
+}
+
+.WTitle {
+  font-size: 40px !important;
+  color: light-dark(var(--mantine-color-white), var(--mantine-color-dark-7));
+  font-weight: 100 !important;
+}
+
+.WCenterCard {
+  width: calc(100% - 40px);
+  max-width: 800px;
+  flex: auto;
+
+  [data-mantine-color-scheme="light"] & {
+    background-color: #24272a;
+  }
+}
