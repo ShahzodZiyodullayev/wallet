@@ -1,0 +1,9 @@
+.WConnectTitle{
+    text-align: center;
+    font-weight: 500 !important;
+    color: light-dark(var(--mantine-color-white), var(--mantine-color-dark-7));
+}
+
+.WConnectCenter{
+    height: 100%;
+}
